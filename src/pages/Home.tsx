@@ -34,7 +34,7 @@ export const HomePage = () => {
 
         <div className="mt-8 text-center">
           <Link
-            to="/services"
+            to="/procedures"
             className="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
           >
             View All Services

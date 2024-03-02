@@ -1,13 +1,14 @@
 import { Outlet } from "react-router";
 import { NavigationBar } from "../Navigation/navigationBar";
-import { HomePage } from "./Home";
+import { Footer } from "./Footer";
+
 
 export const BeautySaloon = () => {
   return (
     <div>
       <NavigationBar />
       <Outlet />
-      <HomePage/>
+      <Footer/>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { Hair } from "./pages/Hair";
 import { Manicure } from "./pages/Manicure";
 import { AboutPage } from "./pages/About";
 import { BeautySaloon } from "./pages/Main";
+import { Procedures } from "./pages/Procedures";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     element: <BeautySaloon />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <HomePage />,
       },
       {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "/manicure",
         element: <Manicure />,
       },
+      {
+        path: "/procedures",
+        element: <Procedures />,
+      }
     ],
   },
 ]);

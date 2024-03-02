@@ -111,6 +111,14 @@ const NavigationMenu = () => {
                   About us
                 </Link>
               </a>
+              <a
+                href="#"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                <Link to="/procedures" className=" p-7">
+                Procedures
+                </Link>
+              </a>
               <div className="relative">
                 {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
                 <button
