@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-interface ServiceCardProps {
-  title: string;
-  description: string;
-}
+import { ServiceCard } from "../components/serviceCard";
 
 export const HomePage = () => {
   return (
@@ -41,15 +38,6 @@ export const HomePage = () => {
           </Link>
         </div>
       </div>
-    </div>
-  );
-};
-
-const ServiceCard = ({ title, description }: ServiceCardProps) => {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">{title}</h2>
-      <p className="text-gray-600">{description}</p>
     </div>
   );
 };

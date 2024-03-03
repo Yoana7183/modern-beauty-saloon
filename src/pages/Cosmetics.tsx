@@ -1,18 +1,20 @@
-interface ProcedureCardProps {
-  title: string;
-  description: string;
-}
+import { useEffect } from "react";
 
-const ProcedureCard = ({ title, description }: ProcedureCardProps) => {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">{title}</h2>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  );
-};
+import { useDispatch } from "react-redux";
+import { proceduresThunk, selectManicureData } from "../slice/Procedures.slice";
+import { AppDispatch, useAppSelector } from "../store";
+import { ProcedureCardExtended } from "../components/procedureCardExtended";
 
 export const Cosmetics = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const cosmeticsProceduresData = useAppSelector(
+    selectManicureData.cosmeticsProceduresData
+  );
+  useEffect(() => {
+    dispatch(proceduresThunk.cosmetics());
+  }, []);
+  console.log("cosmeticsProceduresData", cosmeticsProceduresData);
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto px-4 py-8">
@@ -26,19 +28,22 @@ export const Cosmetics = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProcedureCard
-            title="Facial Treatment"
-            description="Revitalize your skin with our personalized facial treatments tailored to your skin type."
-          />
-          <ProcedureCard
-            title="Microdermabrasion"
-            description="Achieve smoother, younger-looking skin with our microdermabrasion treatment."
-          />
-          <ProcedureCard
-            title="Chemical Peel"
-            description="Reduce signs of aging and improve skin texture with our chemical peel procedure."
-          />
-          {/* Add more procedure cards as needed */}
+          {Array.isArray(cosmeticsProceduresData) &&
+          cosmeticsProceduresData.length > 0 ? (
+            cosmeticsProceduresData.map((procedure) => (
+              <ProcedureCardExtended
+                key={procedure.id}
+                procedure={procedure.procedure}
+                averageTime={procedure.averageTime}
+                coveringHealingTime={procedure.coveringHealingTime}
+                specialInstructionsBefore={procedure.specialInstructionsBefore}
+                specialInstructionsAfter={procedure.specialInstructionsAfter}
+                price={procedure.price}
+              />
+            ))
+          ) : (
+            <p>No data available</p>
+          )}
         </div>
 
         <div className="mt-8">

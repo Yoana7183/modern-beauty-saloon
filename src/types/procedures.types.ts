@@ -1,8 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+// import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export type ManicureThunkType = {
-  procedures: ReturnType<typeof createAsyncThunk>;
-};
+// export type ProcedureThunkType = {
+//   manicure: ReturnType<typeof createAsyncThunk>;
+//   hair: ReturnType<typeof createAsyncThunk>;
+//   cosmetics: ReturnType<typeof createAsyncThunk>;
+// };
 
 export type RequestTypes =
   | "pending"
@@ -20,8 +22,19 @@ export type Procedure = {
   specialInstructionsAfter: string;
   price: string;
 };
+
 export type ManicureInitTypes = {
-  procedures: Procedure[];
-  status: RequestTypes;
-  error: string;
+  manicureProceduresInfo: Procedure[];
+  manicureProcedureStatus: RequestTypes;
+  manicureProcedureError: string;
+  hairProceduresInfo: Procedure[];
+  hairProcedureStatus: RequestTypes;
+  hairProcedureError: string;
+  cosmeticsProceduresInfo: Procedure[];
+  cosmeticsProcedureStatus: RequestTypes;
+  cosmeticsProcedureError: string;
 };
+export interface ProcedureCardProps {
+  title: string;
+  description: string;
+}

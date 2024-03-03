@@ -1,11 +1,14 @@
-import { combineReducers } from "redux";
-import manicureReducer from "../slice/Mnicure.slice"; // Assuming it's named manicureReducer
+import { configureStore } from "@reduxjs/toolkit";
+import { RootState, rootReducer } from "./rootReducer";
+import loggerMiddleware from "./middware";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
 
-const rootReducer = combineReducers({
-  manicure: manicureReducer,
-  // Add other reducers here
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(loggerMiddleware),
 });
 
-export type RootState = ReturnType<typeof rootReducer>;
-
-export default rootReducer;
+export default store;
+export type AppDispatch = typeof store.dispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
