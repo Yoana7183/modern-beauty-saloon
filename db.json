@@ -1,0 +1,98 @@
+{
+  "manicure": {
+    "category": "manicure",
+    "procedures": [
+      {
+        "id": 1,
+        "procedure": "Classic Manicure",
+        "averageTime": "45 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Remove any existing nail polish.",
+        "specialInstructionsAfter": "Avoid activities that may damage your nails for 24 hours.",
+        "price": "$30"
+      },
+      {
+        "id": 2,
+        "procedure": "Gel Manicure",
+        "averageTime": "60 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Do not apply lotion or oil to your hands before the procedure.",
+        "specialInstructionsAfter": "Avoid hot water and harsh chemicals for 24 hours.",
+        "price": "$40"
+      },
+      {
+        "id": 3,
+        "procedure": "French Manicure",
+        "averageTime": "50 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Ensure your nails are clean and trimmed.",
+        "specialInstructionsAfter": "Use cuticle oil to keep your nails hydrated.",
+        "price": "$35"
+      }
+    ]
+  },
+  "hair": {
+    "category": "hair",
+    "procedures": [
+      {
+        "id": 4,
+        "procedure": "Haircut",
+        "averageTime": "30-45 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Wash your hair before the appointment.",
+        "specialInstructionsAfter": "Use a quality conditioner to keep your hair hydrated.",
+        "price": "$50"
+      },
+      {
+        "id": 5,
+        "procedure": "Hair Coloring",
+        "averageTime": "60-120 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Avoid washing your hair for 24 hours before coloring.",
+        "specialInstructionsAfter": "Use color-safe shampoo and conditioner to maintain the color.",
+        "price": "$80"
+      },
+      {
+        "id": 6,
+        "procedure": "Hair Styling",
+        "averageTime": "30-60 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Come with clean, dry hair.",
+        "specialInstructionsAfter": "Avoid heat styling for 24 hours.",
+        "price": "$40"
+      }
+    ]
+  },
+  "cosmetics": {
+    "category": "cosmetics",
+    "procedures": [
+      {
+        "id": 7,
+        "procedure": "Facial Treatment",
+        "averageTime": "60 minutes",
+        "coveringHealingTime": "None",
+        "specialInstructionsBefore": "Cleanse your face thoroughly before the procedure.",
+        "specialInstructionsAfter": "Avoid touching your face and use gentle skincare products.",
+        "price": "$70"
+      },
+      {
+        "id": 8,
+        "procedure": "Microdermabrasion",
+        "averageTime": "45 minutes",
+        "coveringHealingTime": "Minimal, typically a few hours",
+        "specialInstructionsBefore": "Avoid excessive sun exposure for one week before the procedure.",
+        "specialInstructionsAfter": "Apply moisturizer regularly and avoid harsh skincare products.",
+        "price": "$90"
+      },
+      {
+        "id": 9,
+        "procedure": "Chemical Peel",
+        "averageTime": "30-60 minutes",
+        "coveringHealingTime": "Peeling may last for several days",
+        "specialInstructionsBefore": "Discontinue use of retinol and exfoliating products for one week before the procedure.",
+        "specialInstructionsAfter": "Keep skin hydrated and protected from the sun.",
+        "price": "$120"
+      }
+    ]
+  }
+}
