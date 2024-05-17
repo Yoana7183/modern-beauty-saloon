@@ -1,16 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ManicureInitTypes as ProceduresInitTypes } from "../types/procedures.types";
+import { ProcedureInitTypes as ProceduresInitTypes } from "../types/procedures.types";
 import { RootState } from "../store/rootReducer";
 
 const initialState: ProceduresInitTypes = {
-  manicureProceduresInfo: [],
+  manicureProceduresInfo: null,
   manicureProcedureStatus: "idle",
   manicureProcedureError: "",
-  hairProceduresInfo: [],
+  hairProceduresInfo: null,
   hairProcedureStatus: "idle",
   hairProcedureError: "",
-  cosmeticsProceduresInfo: [],
+  cosmeticsProceduresInfo: null,
   cosmeticsProcedureStatus: "idle",
   cosmeticsProcedureError: "",
 };
@@ -48,7 +48,7 @@ const manicureSlice = createSlice({
       })
       .addCase(proceduresThunk.manicure.fulfilled, (state, action) => {
         state.manicureProcedureStatus = "succeeded";
-        state.manicureProceduresInfo = action.payload.procedures;
+        state.manicureProceduresInfo = action.payload;
       })
       .addCase(proceduresThunk.manicure.rejected, (state) => {
         state.manicureProcedureError = "Unknown error";
@@ -59,7 +59,7 @@ const manicureSlice = createSlice({
       })
       .addCase(proceduresThunk.hair.fulfilled, (state, action) => {
         state.hairProcedureStatus = "succeeded";
-        state.hairProceduresInfo = action.payload.procedures;
+        state.hairProceduresInfo = action.payload;
       })
       .addCase(proceduresThunk.hair.rejected, (state) => {
         state.hairProcedureError = "Unknown error";
@@ -70,7 +70,7 @@ const manicureSlice = createSlice({
       })
       .addCase(proceduresThunk.cosmetics.fulfilled, (state, action) => {
         state.cosmeticsProcedureStatus = "succeeded";
-        state.cosmeticsProceduresInfo = action.payload.procedures;
+        state.cosmeticsProceduresInfo = action.payload;
       })
       .addCase(proceduresThunk.cosmetics.rejected, (state) => {
         state.cosmeticsProcedureError = "Unknown error";

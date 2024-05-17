@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { proceduresThunk, selectManicureData } from "../slice/Procedures.slice";
 import { AppDispatch, useAppSelector } from "../store";
-import { ProcedureCardExtended } from "../components/procedureCardExtended";
+import ProcedureList from "../components/procedureList";
 
 export const Manicure = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -20,29 +20,20 @@ export const Manicure = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800">
-          Manicure Procedures
+            Hair Style Procedures
           </h1>
           <p className="text-lg text-gray-600">
-            Learn more about our cosmetic services and our manicurist
+            Learn more about our cosmetic services and our hair stylist
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Array.isArray(manicureProceduresData) &&
-          manicureProceduresData.length > 0 ? (
-            manicureProceduresData.map((procedure) => (
-              <ProcedureCardExtended
-                key={procedure.id}
-                procedure={procedure.procedure}
-                averageTime={procedure.averageTime}
-                coveringHealingTime={procedure.coveringHealingTime}
-                specialInstructionsBefore={procedure.specialInstructionsBefore}
-                specialInstructionsAfter={procedure.specialInstructionsAfter}
-                price={procedure.price}
-              />
-            ))
+        <div className="w-2 gap-8">
+          {manicureProceduresData ? (
+            <ProcedureList
+              data={manicureProceduresData}
+              category={manicureProceduresData.category}
+            />
           ) : (
-            <p>No data available</p>
+            <p>No cosmetics data available</p>
           )}
         </div>
 

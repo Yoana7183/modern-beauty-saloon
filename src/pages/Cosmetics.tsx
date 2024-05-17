@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { proceduresThunk, selectManicureData } from "../slice/Procedures.slice";
 import { AppDispatch, useAppSelector } from "../store";
-import { ProcedureCardExtended } from "../components/procedureCardExtended";
+import ProcedureList from "../components/procedureList";
 
 export const Cosmetics = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -20,29 +20,20 @@ export const Cosmetics = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800">
-            Cosmetic Procedures
+            Hair Style Procedures
           </h1>
           <p className="text-lg text-gray-600">
-            Learn more about our cosmetic services and our cosmetician
+            Learn more about our cosmetic services and our hair stylist
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Array.isArray(cosmeticsProceduresData) &&
-          cosmeticsProceduresData.length > 0 ? (
-            cosmeticsProceduresData.map((procedure) => (
-              <ProcedureCardExtended
-                key={procedure.id}
-                procedure={procedure.procedure}
-                averageTime={procedure.averageTime}
-                coveringHealingTime={procedure.coveringHealingTime}
-                specialInstructionsBefore={procedure.specialInstructionsBefore}
-                specialInstructionsAfter={procedure.specialInstructionsAfter}
-                price={procedure.price}
-              />
-            ))
+        <div className="w-2 gap-8">
+          {cosmeticsProceduresData ? (
+            <ProcedureList
+              data={cosmeticsProceduresData}
+              category={cosmeticsProceduresData.category}
+            />
           ) : (
-            <p>No data available</p>
+            <p>No cosmetics data available</p>
           )}
         </div>
 

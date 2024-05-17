@@ -22,15 +22,19 @@ export type Procedure = {
   specialInstructionsAfter: string;
   price: string;
 };
+export type ProcedureType = {
+  category: string;
+  procedures: Procedure[];
+};
 
-export type ManicureInitTypes = {
-  manicureProceduresInfo: Procedure[];
+export type ProcedureInitTypes = {
+  manicureProceduresInfo: ProcedureType | null;
   manicureProcedureStatus: RequestTypes;
   manicureProcedureError: string;
-  hairProceduresInfo: Procedure[];
+  hairProceduresInfo: ProcedureType | null;
   hairProcedureStatus: RequestTypes;
   hairProcedureError: string;
-  cosmeticsProceduresInfo: Procedure[];
+  cosmeticsProceduresInfo: ProcedureType | null;
   cosmeticsProcedureStatus: RequestTypes;
   cosmeticsProcedureError: string;
 };
